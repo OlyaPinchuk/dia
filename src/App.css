@@ -150,6 +150,7 @@
 .row {
   display: flex;
   justify-content: space-between;
+  gap: 80px;
 }
 
 .margin-bottom {
@@ -204,8 +205,15 @@ h4 {
   
 }
 
-h3 {
+#second-container h3 {
   margin: 0;
+  margin-bottom: 20px;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #665CD1;
 }
 
 .third-container-card {
@@ -218,3 +226,249 @@ h3 {
   min-width: 450px;
   width: 45%;
 }
+
+.point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+/* Black/500 */
+
+color: #262626;
+}
+
+#purposes h3 {
+  margin: 0;
+  margin-bottom: 20px;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #665CD1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16.6px;
+}
+
+.info {
+  width: 501px;
+  margin: 11px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+}
+
+.info h3 {
+  margin: 0;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #262626;
+
+}
+
+.to-web {
+  height: 40px;
+  background: #665CD1;
+  box-shadow: 0px 4px 10px rgba(110, 98, 228, 0.26);
+  border-radius: 45px;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #F1F0FF;
+  padding: 10px 15px;
+
+}
+
+.cards {
+  height: 230px;
+  /* width: 100%; */
+  margin: 20px 50px;
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+.cards .card {
+  background: #FEFEFE;
+  box-shadow: 0px 1.33333px 11.3333px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+  padding: 10px;
+  width: 30%;
+  min-width: 360px;
+
+  /* width: 360px;
+  min-width: 360px; */
+  /* max-width: 500px; */
+}
+
+.regions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+  height: 140px;
+}
+
+.regions span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #262626;
+}
+
+.card h5 {
+  margin: 0;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #262626;
+  
+}
+
+.purple {
+  color: #665CD1;
+}
+
+#fourth-container {
+  margin-top: 50px;
+}
+
+#fourth-container h3 {
+  margin: 0;
+  margin-left: 50px;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #665CD1;
+
+}
+
+
+#fourth-container h4 {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 24px;
+  color: #171717;
+  height: 48px;
+  width: 435px;
+  margin: 20px 0 0 50px;
+}
+
+.fourth-subtitle {
+  margin: 10px 0 0 50px;
+  width: 538px;
+  height: 28px;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 14px;
+  color: #7E7E7E;
+}
+
+#fourth-container h6 {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #5A5A5A;
+  text-align: center;
+  margin: 0;
+}
+
+#map {
+  display: block;
+  margin: 6px auto 20px auto;
+}
+
+#statistics {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #665CD1;
+  box-shadow: 0px 4px 10px rgba(110, 98, 228, 0.26);
+  border-radius: 45px;
+  width: 270px;
+  height: 40px;
+  color: #F1F0FF;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0 auto;
+
+}
+
+.fifth-container-content {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+#fifth-container h3 {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #665CD1;
+  margin: 0 0 20px 50px;
+
+}
+
+#fifth-container {
+  margin: 50px 0;
+}
+
+
+#sixth-container {
+  height: 283px;
+}
+
+#sixth-container-row {
+  height: 193px;
+}
+
+.logo_vertical_triple:hover {
+  transform: scale(1.1);
+  /* background-color: #665CD1; */
+}
+
+
+
+
+
