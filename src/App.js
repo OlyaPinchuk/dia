@@ -1,7 +1,7 @@
 import logo from './Logo.svg';
 // import downIcon from './down.svg'
 import './App.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './map.css';
 import { Select, MenuItem, InputLabel} from '@mui/material';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
@@ -23,19 +23,17 @@ import five from './five.svg'
 import logo_vertical_triple from './vertical_logo_triple.svg'
 import video from './video.png'
 import storage1 from './storage1.svg'
+import storage2 from './storage2.svg'
+import storage3 from './storage3.svg'
+import storage4 from './storage4.svg'
+
 import rate1 from './rate1.svg'
 import eye from './eye.svg'
-
-
-
-
-
-
-
-
-
-
-
+import logo_mini from './logo_vertical_mini.svg'
+import letter1 from './letter1.svg'
+import letter2 from './letter2.svg'
+import letter3 from './letter3.svg'
+import letter4 from './letter4.svg'
 
 
 
@@ -43,15 +41,32 @@ import eye from './eye.svg'
 
 function App() {
 
+  const [x, setX] = useState(0)
+  const [y, setY] = useState(0)
+  const [visible, setVisible] = useState(false)
+  const [region, setRegion] = useState('')
+  const [language, setLanguage] = useState('УКР')
+
+
   const handleRegionClick = (e) => {
-    console.log(e.target.id)
+    setRegion(e.target.id)
+    setX(e.pageX - 170)
+    setY(e.pageY - 120)
+    setVisible(true)
+  
+  }
+
+  const handleSelect = (e) => {
+    console.log(e.target.value)
+    setLanguage(e.target.value)
   }
 
   useEffect(() => {
     const paths = document.getElementsByTagName("path")
 
     for (let el of paths) {
-      el.addEventListener("click", handleRegionClick)
+      el.addEventListener("mouseover", handleRegionClick)
+      el.addEventListener("mouseout", () => setVisible(false))
     }
 
   }, [])
@@ -62,41 +77,30 @@ function App() {
     }
   })(ExpandMoreOutlinedIcon);
 
-
-  
-
-
   return (
     <div>
       <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'></link>
-      {/* <div className='hi'>
-        hi
-      </div> */}
+
+      <div id='bubble' className={visible ? 'visible' : 'hidden'} style={{position: 'absolute'  , zIndex:'1' , marginTop:`${y}px`, marginLeft:`${x}px`}}>{region}</div>
 
 
       <div id='first-container'>
         <div id='header'>
           <img id='logo' src={logo} alt='logo'></img>
           <div className='menu'>
-            <div id='service'>Про сервіс</div>
-            <div id='team'>Команда</div>
-            <div id='faq'>FAQ</div>
+            <div id='service' className='button'>Про сервіс</div>
+            <div id='team' className='button'>Команда</div>
+            <div id='faq' className='button'>FAQ</div>
 
           </div>
 
-          <div id='web-version'>До веб-версії MOOW</div>
+          <div id='web-version' className='button'>До веб-версії MOOW</div>
           <div id='lang'>
-            <InputLabel id="select-label">УКР</InputLabel>
-            <Select id='select' value='УКР' variant='standard' IconComponent={WhiteExpandMoreOutlinedIcon}>
-                <MenuItem>УКР</MenuItem>
-              <MenuItem>EN</MenuItem>
+            <Select id='select' value={language} variant='standard' IconComponent={WhiteExpandMoreOutlinedIcon} onChange={handleSelect}>
+                <MenuItem value='УКР'>УКР</MenuItem>
+              <MenuItem value='EN'>EN</MenuItem>
           </Select>
           </div>
-          
-
-          {/* <div id='languages'>УКР
-            <img src={downIcon} alt='icon' onClick={() => console.log('click')}></img>
-          </div> */}
 
         </div>
         <h2 className='title'>Весь агро-транспортний ринок в одному сервісі</h2>
@@ -110,7 +114,7 @@ function App() {
       <div id='second-container'>
         <h3>Наші переваги</h3>
           <div className='row margin-bottom'>
-            <div className='row-card'>
+            <div className='row-card card-active'>
               <img src={all}/>
               <div className='card-content'>
                 <h4>Все в одному сервісі</h4>
@@ -317,7 +321,7 @@ function App() {
       </div>
 
       <div id='sixth-container'>
-          <div>Знижка на послуги MOOW до 12.12</div>
+          <div id='sale'>Знижка на послуги MOOW до 12.12</div>
           <div id='sixth-container-row'>
             <div className='sixth-container-row-card'>
               <img src={storage1}/>
@@ -333,7 +337,112 @@ function App() {
                 <span>12 тис.</span>
               </div>
             </div>
+            <div className='sixth-container-row-card'>
+              <img src={storage2}/>
+              <div className='line-1'>
+                <span>Склад 1</span>
+                <img src={rate1}/>
+              </div>
+              <div className='line-2'>
+                <span>300 грн/кв.м.
+                  <span>Мін. ціна</span>
+                </span>
+                <img src={eye}/>
+                <span>12 тис.</span>
+              </div>
+            </div>
+            <div className='sixth-container-row-card'>
+              <img src={storage3}/>
+              <div className='line-1'>
+                <span>Склад 1</span>
+                <img src={rate1}/>
+              </div>
+              <div className='line-2'>
+                <span>300 грн/кв.м.
+                  <span>Мін. ціна</span>
+                </span>
+                <img src={eye}/>
+                <span>12 тис.</span>
+              </div>
+            </div>
+            <div className='sixth-container-row-card'>
+              <img src={storage4}/>
+              <div className='line-1'>
+                <span>Склад 1</span>
+                <img src={rate1}/>
+              </div>
+              <div className='line-2'>
+                <span>300 грн/кв.м.
+                  <span>Мін. ціна</span>
+                </span>
+                <img src={eye}/>
+                <span>12 тис.</span>
+              </div>
+            </div>
           </div>
+      </div>
+
+      <div id='container-seven'>
+        <h3>Види реєстрації</h3>
+        <div id='container-seven-row'>
+          <div className='container-seven-card'>
+          <div>
+              <img src={logo_mini}/>
+              
+            </div>
+            <div>
+              <h4>Фізична особа</h4>
+              <div className='text'>Проста система верифікації та доступ до всіх учасників агроринку та транспортної сфери без будь-яких обмежень роблять наш сервіс найкращим вибором для пересічного користувача. Ви можете як купувати, так і продавати товари і послуги на нашому сервісі. Пройдіть додаткову верифікацію та отримайте статус перевіреного учасника, що ще більше розширить ваші можливості пошуку партнерів та отримання прибутку. Також для приватного користувача буде особливо зручний наш супермаркет сільськогосподарської продукції. Шукайте потрібні вам категорії за допомогою просунутого фільтра та купуйте все в один клік.</div>
+            </div>
+          </div>
+          <div className='container-seven-card'>
+            <div>
+              <img src={logo_mini}/>
+              
+            </div>
+            <div>
+              <h4>Юридична особа</h4>
+              <div className='text'>Сервіс об'єднує практично всіх учасників транспортного та аграрного ринку України. Компанії, що надають послуги у сфері транспортування, оренди складських приміщень, оренди транспорту або оптової торгівлі сільськогосподарською продукцією можуть здійснювати будь-які операції в рамках одного сервісу. Система багаторівневої верифікації партнерів та функціонал укладання ф'ючерсних угод відкривають для компаній необмежені можливості для реалізації своїх бізнес-завдань.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id='container-eight'>
+        <h3>Все просто!</h3>
+        <div id='container-eight-row'>
+        <div className='container-eight-card color'>
+          <img  src={letter1}/>
+          <div className='step-text'>
+            <div className='step-title'>Крок 1</div>
+            <div>Встановити додаток або зайти на сайт сервісу</div>
+          </div>
+          
+        </div>
+        <div className='container-eight-card color-light'>
+          <img  src={letter2}/>
+          <div className='step-text'>
+            <div className='step-title'>Крок 2</div>
+            <div>Завантажуйте документи та підтверджуйте особистість чи компанію</div>
+          </div>
+        </div>
+        <div className='container-eight-card color-light'>
+          <img  src={letter3}/>
+          <div className='step-text'>
+            <div className='step-title'>Крок 3</div>
+            <div>Постінг / пошук товарів та послуг. Здійснюйте угоди та укладайте договори</div>
+          </div>
+        </div>
+        <div className='container-eight-card color-light'>
+          <img  src={letter4}/>
+          <div className='step-text'>
+            <div className='step-title'>Крок 4</div>
+            <div>Додаткові функції “Підключайте спеціалізовані додаткові функції”</div>
+          </div>
+        </div>
+
+        </div>
+        
       </div>
 
       {/* <svg id='map' width="994" height="606" viewBox="0 0 994 606" fill="none" xmlns="http://www.w3.org/2000/svg">

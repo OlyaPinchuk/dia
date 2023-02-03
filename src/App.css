@@ -93,7 +93,7 @@
 
 #select {
   color: white;
-  padding: 0;
+  /* padding: 0; */
   margin: 0 0 0 5px;
 }
 
@@ -124,6 +124,23 @@
   height: 80px;
 }
 
+/* .title {
+  -webkit-mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);
+  mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);
+  -webkit-mask-size: 800%;
+  mask-size: 800%;
+  -webkit-mask-position: 0;
+  mask-position: 0;
+}
+
+.title:hover {
+  transition: mask-position 2s ease,-webkit-mask-position 2s ease;
+  -webkit-mask-position: 120%;
+  mask-position: 120%;
+  opacity: 1;
+} */
+
+
 .subtitle {
   margin: 0;
   font-family: 'Mulish', sans-serif;
@@ -146,6 +163,18 @@
   padding: 0 50px;
   margin-top: 50px;
 }
+
+/* @media (max-width: 1200px) {
+  #second-container .row {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    
+  }
+  #second-container {
+    height: fit-content;
+  }
+} */
 
 .row {
   display: flex;
@@ -457,6 +486,10 @@ color: #262626;
 
 #sixth-container {
   height: 283px;
+  background: #F1F0FF;
+  padding: 20px 50px;
+  margin-bottom: 50px;
+
 }
 
 #sixth-container-row {
@@ -467,6 +500,190 @@ color: #262626;
   transform: scale(1.1);
   /* background-color: #665CD1; */
 }
+
+#sixth-container-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sixth-container-row-card {
+  /* width: 260px; */
+  height: 193px;
+}
+
+#sale {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #665CD1;
+  margin-bottom: 19px;
+}
+
+#container-seven {
+  padding: 0 50px;
+  margin-bottom: 50px;
+}
+
+.container-seven-card {
+  display: flex;
+  gap: 33px;
+  width: 45%;
+  /* width: 540px; */
+  background: #FEFEFE;
+  box-shadow: 0px 1.33333px 11.3333px rgba(0, 0, 0, 0.09);
+  border-radius: 15px;
+  padding: 10px;
+
+  /* height: 290px; */
+}
+
+#container-seven-row {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 100px; */
+  /* justify-content: center; */
+}
+
+.container-seven-card h4 {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 24px;
+  color: #171717;
+  margin-bottom: 10px;
+
+
+}
+
+.container-seven-card .text {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+/* Black/500 */
+
+  color: #262626;
+
+}
+
+#container-seven h3 {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+
+  color: #665CD1;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+#container-eight {
+  margin-bottom: 50px;
+}
+
+.container-eight-card {
+  height: 200px;
+  width: 220px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  /* gap: 25px; */
+}
+
+#container-eight-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 50px;
+}
+
+.color {
+  background-color: #665CD1;
+  color: #F1F0FF;
+}
+
+.color-light {
+  background-color: #F1F0FF;
+}
+
+#container-eight-row img {
+  width: 71.5px;
+  height: 65px;
+}
+
+.step-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5px;
+  text-align: center;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.step-title {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+
+}
+
+#container-eight h3 {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  
+  /* Purple/600 */
+  
+  color: #665CD1;
+  margin: 0 0 20px 50px;
+  
+}
+
+.button {
+  transition: 500ms;
+
+}
+
+.button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: 500ms;
+}
+
+.card-active {
+  transition: 500ms;
+  
+  /* opacity: 0; */
+
+}
+
+.card-active:hover {
+  margin-top: -20px;
+  cursor: pointer;
+  transition: 500ms;
+  /* opacity: 1;
+  transition-delay: 250ms; */
+
+}
+
+
 
 
 
