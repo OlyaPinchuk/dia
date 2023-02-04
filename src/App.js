@@ -1,5 +1,4 @@
 import logo from './Logo.svg';
-// import downIcon from './down.svg'
 import './App.css';
 import { useEffect, useState } from 'react';
 import './map.css';
@@ -9,9 +8,10 @@ import { withStyles } from "@mui/styles";
 import all from './all_in_one.svg'
 import business from './business_process.svg'
 import easy_to_use from './easy_to_use.svg'
+import verified_members from './verified_members.svg'
+
 import point from './point.svg'
 import logo_vertical from './logo_vertical.svg'
-// import google_play from './google_play.svg'
 import google_play from './google-play-badge 1.png'
 
 import apple from './apple.svg'
@@ -46,11 +46,14 @@ import viber from './viber 1.png'
 import facebook from './facebook.svg'
 import instagram from './instagram.svg'
 import youtube from './youtube.svg'
-
-
+import {Route, Routes} from "react-router";
+import {Link} from 'react-router-dom'
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import AboutComponent from './components/aboutComponent/aboutComponent';
+import HomeComponent from './components/homeComponent/homeComponent';
+
 
 
 
@@ -58,48 +61,52 @@ import 'aos/dist/aos.css';
 
 function App() {
 
-  const [x, setX] = useState(0)
-  const [y, setY] = useState(0)
-  const [visible, setVisible] = useState(false)
-  const [region, setRegion] = useState('')
-  const [language, setLanguage] = useState('УКР')
+  // const [x, setX] = useState(0)
+  // const [y, setY] = useState(0)
+  // const [visible, setVisible] = useState(false)
+  // const [region, setRegion] = useState('')
+  // const [language, setLanguage] = useState('УКР')
 
 
-  const handleRegionClick = (e) => {
-    setRegion(e.target.id)
-    setX(e.pageX - 170)
-    setY(e.pageY - 120)
-    setVisible(true)
+  // const handleRegionClick = (e) => {
+  //   setRegion(e.target.id)
+  //   setX(e.pageX - 170)
+  //   setY(e.pageY - 120)
+  //   setVisible(true)
   
-  }
+  // }
 
-  const handleSelect = (e) => {
-    console.log(e.target.value)
-    setLanguage(e.target.value)
-  }
+  // const handleSelect = (e) => {
+  //   console.log(e.target.value)
+  //   setLanguage(e.target.value)
+  // }
 
-  useEffect(() => {
-    AOS.init();
-    const paths = document.getElementsByTagName("path")
+  // useEffect(() => {
+  //   AOS.init();
+  //   const paths = document.getElementsByTagName("path")
 
-    for (let el of paths) {
-      el.addEventListener("mouseover", handleRegionClick)
-      el.addEventListener("mouseout", () => setVisible(false))
-    }
+  //   for (let el of paths) {
+  //     el.addEventListener("mouseover", handleRegionClick)
+  //     el.addEventListener("mouseout", () => setVisible(false))
+  //   }
 
-  }, [])
+  // }, [])
 
-  const WhiteExpandMoreOutlinedIcon = withStyles({
-    root: {
-      color: "white"
-    }
-  })(ExpandMoreOutlinedIcon);
+  // const WhiteExpandMoreOutlinedIcon = withStyles({
+  //   root: {
+  //     color: "white"
+  //   }
+  // })(ExpandMoreOutlinedIcon);
 
   return (
     <div>
       <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'></link>
-      
-      {/* <link rel="stylesheet" href="bower_components/aos/dist/aos.css" /> */}
+
+      <Routes>
+        <Route path='/' element={<HomeComponent></HomeComponent>}></Route>
+        <Route path='/about' element={<AboutComponent></AboutComponent>}></Route>
+      </Routes>
+{/* 
       <div id='bubble' className={visible ? 'visible' : 'hidden'} style={{position: 'absolute'  , zIndex:'1' , marginTop:`${y}px`, marginLeft:`${x}px`}}>{region} -- some info about the region</div>
       
 
@@ -107,7 +114,7 @@ function App() {
         <div id='header'>
           <img id='logo' src={logo} alt='logo'></img>
           <div className='menu'>
-            <div id='service' className='button'>Про сервіс</div>
+            <Link to='/about' id='service' className='button link'>Про сервіс</Link>
             <div id='team' className='button'>Команда</div>
             <div id='faq' className='button'>FAQ</div>
 
@@ -124,9 +131,9 @@ function App() {
         </div>
         <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="600" className='title'>Весь агро-транспортний ринок в одному сервісі</h2>
         <h3 data-aos="fade-right" data-aos-delay="200" data-aos-duration="600" className='subtitle'>Платформа для фермерів, перевізників, промислових та торгових компаній.</h3>
-        <div className='buttons'>
-          <div data-aos="fade-right" data-aos-delay="250" data-aos-duration="600" className='web'>Перейти до веб-версії</div>
-          <div data-aos="fade-right" data-aos-delay="300" data-aos-duration="600" className='download'>Завантажити додаток на смартфон</div>
+        <div data-aos="fade-right" data-aos-delay="250" data-aos-duration="600" className='buttons'>
+          <div  className='web button'>Перейти до веб-версії</div>
+          <div data-aos-duration="600" className='download button'>Завантажити додаток на смартфон</div>
         </div>
       </div>
 
@@ -537,7 +544,7 @@ function App() {
         <h2 id='bottom-h2'>Скоро</h2>
       </div>
 
-      <div id='container-ten'>
+      <div data-aos="fade-right" data-aos-duration="600" id='container-ten'>
         <h3>Залишились запитання?</h3>
         <h5>Перейди на сторінку FAQ, там є відповіді на часті запитання. А якщо все ж не знайшдеш відповіді на запитання, звернись до нашого чат-боту! </h5>
         <div className='container-ten-buttons'>
@@ -553,13 +560,15 @@ function App() {
 
 
       <div id='container-eleven'>
-        <h3>Завантажуйте додаток або працюйте через браузер</h3>
-        <h5>Весь функціонал доступний у двох форматах. Працюйте через телефон або на комп’ютері.</h5>
+        <h3 data-aos="fade-right" data-aos-duration="600">Завантажуйте додаток або працюйте через браузер</h3>
+        <h5 data-aos="fade-right" data-aos-duration="600">Весь функціонал доступний у двох форматах. Працюйте через телефон або на комп’ютері.</h5>
+        <div data-aos="fade-right" data-aos-duration="600">
+          <div  id='container-eleven-button-browser' className='button'>Почати працювати через браузер </div>
 
-        <div id='container-eleven-button-browser'>Почати працювати через браузер </div>
-        <div id='container-eleven-buttons'>
-          <div className='container-eleven-button'>Завантажити додаток з Google Play </div>
-          <div className='container-eleven-button'>Завантажити додаток з App Store</div>
+        </div>
+        <div data-aos="fade-right" data-aos-duration="600" id='container-eleven-buttons'>
+          <div className='container-eleven-button button'>Завантажити додаток з Google Play </div>
+          <div className='container-eleven-button button'>Завантажити додаток з App Store</div>
         </div>
 
       </div>
@@ -572,11 +581,11 @@ function App() {
           <div className='footer-row-card'>
             <img src={point_black}/>
             <div className='footer-card-content'>
-              <div className='first-div'>Сторінки</div>
-              <div>Головна</div>
-              <div>Про сервіс</div>
-              <div>FAQ</div>
-              <div>Команда</div>
+              <div className='first-div button'>Сторінки</div>
+              <div className='button'>Головна</div>
+              <div className='button'>Про сервіс</div>
+              <div className='button'>FAQ</div>
+              <div className='button'>Команда</div>
             </div>
             
 
@@ -609,9 +618,9 @@ function App() {
             <div className='footer-card-content'>
               <div className='first-div'>Соціальні мережі</div>
               <div id='footer-icons'>
-                <img src={facebook}></img>
-                <img src={instagram}></img>
-                <img src={youtube}></img>
+                <img className='button' src={facebook}></img>
+                <img className='button' src={instagram}></img>
+                <img className='button' src={youtube}></img>
 
               </div>
             </div>
@@ -619,7 +628,7 @@ function App() {
           <div className='footer-row-card'>
             <img src={point_black}/>
             
-            <div className='footer-card-content first-div'>Документи</div>
+            <div className='footer-card-content first-div button'>Документи</div>
           </div>
           <div className='footer-row-card-last'>
 
@@ -630,13 +639,13 @@ function App() {
                 <img className='button' src={apple} />
               </div>
               <div className='footer-row-card-last-content'>Або почни працювати з браузеру</div>
-              <div id='footer-to-web'> До веб-версії MOOW</div>
+              <div id='footer-to-web' className='button'> До веб-версії MOOW</div>
            
           </div>
 
         </div>
         <div id='footer-bottom'>©ТОВ «Діджітал інвест адвайзор», 2021-2023</div>
-      </div>
+      </div> */}
 
     </div>
   );

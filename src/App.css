@@ -156,6 +156,60 @@
 
 .buttons {
   margin-top: 115px;
+  margin-left: 50px;
+  display: flex;
+  gap: 15px;
+}
+
+.web {
+  width: 233px;
+  height: 40px;
+  
+  /* Purple/600 */
+  
+  background: #665CD1;
+  box-shadow: 0px 4px 10px rgba(110, 98, 228, 0.26);
+  border-radius: 31px;
+  font-family: 'Mulish';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height */
+
+
+/* Purple/100 */
+
+color: #F1F0FF;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.download {
+
+  width: 320px;
+height: 40px;
+
+/* Black/600 */
+
+background: #171717;
+box-shadow: 0px 4px 10px rgba(110, 98, 228, 0.26);
+border-radius: 45px;
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height */
+
+
+/* Purple/100 */
+
+color: #F1F0FF;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 #second-container {
@@ -1115,6 +1169,11 @@ justify-content: center;
 align-items: center;
 }
 
+
+.link {
+  text-decoration: none;
+  color: #F1F0FF;
+}
 
  
 
