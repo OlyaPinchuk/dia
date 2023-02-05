@@ -39,7 +39,7 @@
 
 
 #first-container {
-  background: url(headerImg.jpeg);
+  background: url(images/headerImg.jpeg);
   background-size: cover;
   /* background-size: 100% 768px; */
   height: 768px;
@@ -739,7 +739,7 @@ color: #262626;
 
 #container-nine {
   height: 689px;
-  background: linear-gradient(0deg, rgba(23, 23, 23, 0.8), rgba(23, 23, 23, 0.8)), url(background2.jpeg);
+  background: linear-gradient(0deg, rgba(23, 23, 23, 0.8), rgba(23, 23, 23, 0.8)), url(images/background2.jpeg);
   background-size: 90%;
   margin-bottom: 50px;
   background-position: center;
@@ -928,7 +928,7 @@ color: #5A5A5A;
 
 #container-eleven {
   height: 235px;
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.54)), url(background3.jpeg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.54)), url(images/background3.jpeg);
   background-size: 100%;
   background-position: center;
   display: flex;
