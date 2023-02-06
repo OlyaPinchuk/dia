@@ -17,7 +17,6 @@ const CardInfoComponent = ({infoCard}) => {
               <div className='regions'>
                 {infoCard.regions.map((element, index) => {
                     return <span key={index}>
-                        {/* <img src={images[element.image]}/> */}
                         <img src={images[index]} alt='number'/>
 
                         {element.content}
