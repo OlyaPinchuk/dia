@@ -1,9 +1,5 @@
-import '../../App.css'
-// import one from '../../images/one.svg'
-// import two from '../../images/two.svg'
-// import three from '../../images/three.svg'
-// import four from '../../images/four.svg'
-// import five from '../../images/five.svg'
+// import '../../App.css'
+import './cardInfoComponent.css'
 
 const CardInfoComponent = ({infoCard}) => {
 
@@ -13,8 +9,6 @@ const CardInfoComponent = ({infoCard}) => {
         2 : require('../../images/three.svg').default,   
         3 : require('../../images/four.svg').default, 
         4 : require('../../images/five.svg').default, 
-
-
     }
 
 

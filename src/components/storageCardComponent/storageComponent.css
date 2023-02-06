@@ -1,0 +1,51 @@
+.container-six-row-card {
+    height: 193px;
+}
+
+.card-active {
+    transition: 500ms;
+}
+  
+.card-active:hover {
+    margin-top: -20px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.line-1, .line-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.line-1 {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #262626;
+}
+
+.purple {
+    color: #665CD1;
+}
+
+.min-price {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 13px;
+    color: #5A5A5A;
+    vertical-align: top;
+}
+
+.views {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 14px;
+    color: #5A5A5A;
+}
+  

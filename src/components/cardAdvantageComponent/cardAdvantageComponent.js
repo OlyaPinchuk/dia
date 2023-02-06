@@ -1,4 +1,6 @@
-import '../../App.css'
+// import '../../App.css'
+import './cardAdvantageComponent.css'
+
 // import all from '../../images/all_in_one.svg'
 
 const CardAdvantageComponent = ({advantage}) => {

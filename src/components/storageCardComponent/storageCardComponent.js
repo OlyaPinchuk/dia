@@ -1,4 +1,6 @@
-import '../../App.css'
+// import '../../App.css'
+import './storageComponent.css'
+
 import rate1 from '../../images/rate1.svg'
 import eye from '../../images/eye.svg'
 
@@ -12,7 +14,7 @@ const StorageCardComponent = ({storage}) => {
     }
 
     return (
-        <div  className='sixth-container-row-card card-active'>
+        <div  className='container-six-row-card card-active'>
               <img src={images[storage.image]} alt='storage'/>
               <div className='line-1'>
                 <span>Склад 1</span>

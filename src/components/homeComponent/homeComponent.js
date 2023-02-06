@@ -1,32 +1,17 @@
 import logo from '../../images/Logo.svg';
 import '../../App.css';
+import './homeComponent.css';
+
 import { useEffect, useState } from 'react';
-import '../../map.css';
 import { Select, MenuItem} from '@mui/material';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import { withStyles } from "@mui/styles";
-// import all from '../../images/all_in_one.svg'
-// import business from '../../images/business_process.svg'
-// import easy_to_use from '../../images/easy_to_use.svg'
 import point from '../../images/point.svg'
 import logo_vertical from '../../images/logo_vertical.svg'
 import google_play from '../../images/google-play-badge 1.png'
-
 import apple from '../../images/apple.svg'
-// import one from '../../images/one.svg'
-// import two from '../../images/two.svg'
-// import three from '../../images/three.svg'
-// import four from '../../images/four.svg'
-// import five from '../../images/five.svg'
 import logo_vertical_triple from '../../images/vertical_logo_triple.svg'
 import video from '../../images/video1.png'
-// import storage1 from '../../images/storage1.svg'
-// import storage2 from '../../images/storage2.svg'
-// import storage3 from '../../images/storage3.svg'
-// import storage4 from '../../images/storage4.svg'
-
-// import rate1 from '../../images/rate1.svg'
-// import eye from '../../images/eye.svg'
 import logo_mini from '../../images/logo_vertical_mini.svg'
 import letter1 from '../../images/letter1.svg'
 import letter2 from '../../images/letter2.svg'
@@ -45,13 +30,12 @@ import facebook from '../../images/facebook.svg'
 import instagram from '../../images/instagram.svg'
 import youtube from '../../images/youtube.svg'
 import {Link} from 'react-router-dom'
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import CardAdvantageComponent from '../cardAdvantageComponent/cardAdvantageComponent';
 import CardInfoComponent from '../cardInfoComponent/cardInfoComponent';
 import StorageCardComponent from '../storageCardComponent/storageCardComponent';
-// import AboutComponent from './components/aboutComponent/aboutComponent';
+import arrow_right from '../../images/arrow_right.svg'
 
 
 const advantages = [
@@ -218,21 +202,12 @@ const storages = [
 
 function HomeComponent() {
 
-//   const [x, setX] = useState(0)
-//   const [y, setY] = useState(0)
-//   const [visible, setVisible] = useState(false)
-//   const [region, setRegion] = useState('')
   const [language, setLanguage] = useState('УКР')
   const [bubbleInfo, setBubbleInfo] = useState({visible: false, x: 0, y: 0, region: ''})
 
 
   const handleRegionClick = (e) => {
     setBubbleInfo({visible: true, x: (e.pageX - 170), y: (e.pageY - 120), region: e.target.id})
-    // setRegion(e.target.id)
-    // setX(e.pageX - 170)
-    // setY(e.pageY - 120)
-    // setVisible(true)
-  
   }
 
   const handleSelect = (e) => {
@@ -270,17 +245,15 @@ function HomeComponent() {
       <div id='bubble' className={bubbleInfo.visible ? 'visible' : 'hidden'} style={{position: 'absolute'  , zIndex:'1' , marginTop:`${bubbleInfo.y}px`, marginLeft:`${bubbleInfo.x}px`}}>{bubbleInfo.region} -- some info about the region</div>
       
 
-      <div id='first-container'>
+      <div id='container-one'>
         <div id='header'>
           <img id='logo' src={logo} alt='logo'></img>
-          <div className='menu'>
-            <Link to='/about' id='service' className='button link'>Про сервіс</Link>
-            <div id='team' className='button'>Команда</div>
-            <div id='faq' className='button'>FAQ</div>
-
+          <div className='font-general menu'>
+            <Link to='/about' className='button link'>Про сервіс</Link>
+            <Link to='/team' id='team' className='button link'>Команда</Link>
+            <Link to='/faq' id='faq' className='button link'>FAQ</Link> 
           </div>
-
-          <div id='web-version' className='button'>До веб-версії MOOW</div>
+          <div className='purple-button button shine'>До веб-версії MOOW</div>
           <div id='lang'>
             <Select id='select' value={language} variant='standard' IconComponent={WhiteExpandMoreOutlinedIcon} onChange={handleSelect}>
                 <MenuItem value='УКР'>УКР</MenuItem>
@@ -289,16 +262,18 @@ function HomeComponent() {
           </div>
 
         </div>
-        <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="600" className='title'>Весь агро-транспортний ринок в одному сервісі</h2>
-        <h3 data-aos="fade-right" data-aos-delay="200" data-aos-duration="600" className='subtitle'>Платформа для фермерів, перевізників, промислових та торгових компаній.</h3>
+        <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="600" className='font-general title'>Весь агро-транспортний ринок в одному сервісі</h2>
+        <h3 data-aos="fade-right" data-aos-delay="200" data-aos-duration="600" className='font-general subtitle'>Платформа для фермерів, перевізників, промислових та торгових компаній.</h3>
         <div data-aos="fade-right" data-aos-delay="250" data-aos-duration="600" className='buttons'>
-          <div  className='web button'>Перейти до веб-версії</div>
-          <div data-aos-duration="600" className='download button'>Завантажити додаток на смартфон</div>
+          <div className='purple-button button shine'>Перейти до веб-версії
+            <img src={arrow_right} alt='arrow'/>
+          </div>
+          <div data-aos-duration="600" className='black_button button shine'>Завантажити додаток на смартфон</div>
         </div>
       </div>
 
-      <div id='second-container'>
-        <h3 data-aos="fade-right" data-aos-duration="600">Наші переваги</h3>
+      <div id='container-two'>
+        <h3 data-aos="fade-right" data-aos-duration="600" className='h3-purple'>Наші переваги</h3>
           <div className='row margin-bottom' data-aos="fade-right" data-aos-duration="700">
             {advantages.map((element, index) => index < 2 ? <CardAdvantageComponent key={element.id} advantage={element}></CardAdvantageComponent> : null)}
           </div>
@@ -307,9 +282,9 @@ function HomeComponent() {
           </div>
       </div>
 
-      <div id='third-container'>
+      <div id='container-three'>
           <div id='purposes' data-aos="fade-right" data-aos-duration="700">
-            <h3>Для кого ми існуємо</h3>
+            <h3 className='h3-purple'>Для кого ми існуємо</h3>
             <div className='content'>
               <div data-aos="fade-right" data-aos-duration="600" className='point'>
                 <img src={point} alt='point'/>
@@ -334,11 +309,11 @@ function HomeComponent() {
           
             </div>
           </div>
-          <div className='third-container-card' data-aos="fade-right" data-aos-duration="700">
+          <div className='container-three-card' data-aos="fade-right" data-aos-duration="700">
             <img src={logo_vertical} alt='logo'/>
             <div className='info'>
               <h3>Спробуй прямо зараз через браузер!</h3>
-              <div className='to-web button'>Перейти до веб-версії</div>
+              <div className='purple-button button'>Перейти до веб-версії</div>
               <h3>Або завантажуй та спробуй з смартфону</h3>
               <div className='logos'>
 
@@ -350,7 +325,7 @@ function HomeComponent() {
           </div>
       </div>
 
-      <div id='fourth-container'>
+      <div id='container-four'>
           <h3 data-aos="fade-right" data-aos-duration="700">Наша статистика показує</h3>
           <h4 data-aos="fade-right" data-aos-duration="700">Збір урожаю соняшнику на 01 грудня 2021р. Топ-5 областей</h4>
           <div data-aos="fade-right" data-aos-duration="700" className='fourth-subtitle'>Дані наведено без урахування тимчасово окупованої території Автономної Республіки Крим, м. Севастополя та частини тимчасово окупованих територій у Донецькій та Луганській областях</div>
@@ -390,12 +365,12 @@ function HomeComponent() {
           </svg>
           </div>
 
-          <div className='button' id='statistics'>Більше статистики від MOOW</div>
+          <div className='purple-button button' id='statistics'>Більше статистики від MOOW</div>
       </div>
 
-      <div id='fifth-container'>
+      <div id='container-five'>
           <h3 data-aos="fade-right" data-aos-duration="600">Про MOOW за 2 хвилини</h3>
-          <div data-aos="zoom-in" data-aos-duration="600" className='fifth-container-content'>
+          <div data-aos="zoom-in" data-aos-duration="600" className='container-five-content'>
             <img className='logo_vertical_triple' src={logo_vertical_triple} alt='logo'/>
             <img src={video} alt='vidoe'/>
             <img src={logo_vertical_triple} alt='logo'/>
@@ -403,9 +378,9 @@ function HomeComponent() {
           </div>
       </div>
 
-      <div id='sixth-container'>
+      <div id='container-six'>
           <div data-aos="fade-right" data-aos-duration="600" id='sale'>Знижка на послуги MOOW до 12.12</div>
-          <div data-aos="fade-right" data-aos-duration="600" id='sixth-container-row'>
+          <div data-aos="fade-right" data-aos-duration="600" id='container-six-row'>
             {storages.map(element => <StorageCardComponent key={element.id} storage={element}></StorageCardComponent>)}
           </div>
       </div>
@@ -444,7 +419,6 @@ function HomeComponent() {
             <div className='step-title'>Крок 1</div>
             <div>Встановити додаток або зайти на сайт сервісу</div>
           </div>
-          
         </div>
         <div className='container-eight-card color-light card-active'>
           <img  src={letter2} alt='letter'/>
@@ -538,8 +512,8 @@ function HomeComponent() {
         <h3>Залишились запитання?</h3>
         <h5>Перейди на сторінку FAQ, там є відповіді на часті запитання. А якщо все ж не знайшдеш відповіді на запитання, звернись до нашого чат-боту! </h5>
         <div className='container-ten-buttons'>
-          <div className='first-button button'>Перейди до FAQ</div>
-          <div className='second-button button'>Написати через чат-бот</div>
+          <div className='black_button button'>Перейди до FAQ</div>
+          <div className='purple-button button'>Написати через чат-бот</div>
         </div>
         <div className='container-ten-info' >Середній час відповіді у чат-боті в робочий час (понеділок – п'ятниця, з 10:00 до 18:00) – 2 години. 
           При високому завантаженні термін очікування відповіді може бути збільшено. 
@@ -553,12 +527,12 @@ function HomeComponent() {
         <h3 data-aos="fade-right" data-aos-duration="600">Завантажуйте додаток або працюйте через браузер</h3>
         <h5 data-aos="fade-right" data-aos-duration="600">Весь функціонал доступний у двох форматах. Працюйте через телефон або на комп’ютері.</h5>
         <div data-aos="fade-right" data-aos-duration="600">
-          <div  id='container-eleven-button-browser' className='button'>Почати працювати через браузер </div>
+          <div   className=' purple-button button'>Почати працювати через браузер </div>
 
         </div>
         <div data-aos="fade-right" data-aos-duration="600" id='container-eleven-buttons'>
-          <div className='container-eleven-button button'>Завантажити додаток з Google Play </div>
-          <div className='container-eleven-button button'>Завантажити додаток з App Store</div>
+          <div className='black_button button'>Завантажити додаток з Google Play </div>
+          <div className='black_button button'>Завантажити додаток з App Store</div>
         </div>
 
       </div>
@@ -572,10 +546,10 @@ function HomeComponent() {
             <img src={point_black} alt='point'/>
             <div className='footer-card-content'>
               <div className='first-div button'>Сторінки</div>
-              <div className='button'>Головна</div>
+              <div className='button' onClick={() =>  window.scrollTo(0, 0)}>Головна</div>
               <Link to='/about' className='button' style={{textDecoration: "none", color: "#5A5A5A"}}>Про сервіс</Link>
-              <div className='button'>FAQ</div>
-              <div className='button'>Команда</div>
+              <Link to='/' className='button' style={{textDecoration: "none", color: "#5A5A5A"}}>FAQ</Link>
+              <Link to='/' className='button' style={{textDecoration: "none", color: "#5A5A5A"}}>Команда</Link>
             </div>
             
 
@@ -629,7 +603,7 @@ function HomeComponent() {
                 <img className='button' src={apple} alt='apple_store'/>
               </div>
               <div className='footer-row-card-last-content'>Або почни працювати з браузеру</div>
-              <div id='footer-to-web' className='button'> До веб-версії MOOW</div>
+              <div  className='purple-button button'> До веб-версії MOOW</div>
            
           </div>
 
@@ -637,7 +611,7 @@ function HomeComponent() {
         <div id='footer-bottom'>©ТОВ «Діджітал інвест адвайзор», 2021-2023</div>
       </div>
 
-    </div>
+    </div> 
   );
 }
 

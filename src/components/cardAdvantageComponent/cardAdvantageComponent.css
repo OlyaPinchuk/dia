@@ -1,0 +1,38 @@
+.row-card {
+    min-width: 550px;
+    width: 45%;
+    height: 154px;
+    background: #FEFEFE;
+    box-shadow: 0px 3.33333px 14.6667px rgba(215, 215, 215, 0.47);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    overflow: auto;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.card-content div {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #262626;
+}
+
+.card-active {
+    transition: 500ms;
+}
+  
+.card-active:hover {
+    margin-top: -20px;
+    cursor: pointer;
+    transition: 300ms;
+}
