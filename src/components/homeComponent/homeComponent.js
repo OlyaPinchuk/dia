@@ -1,7 +1,6 @@
 import logo from '../../images/Logo.svg';
 import '../../App.css';
 import './homeComponent.css';
-
 import { useEffect, useState } from 'react';
 import { Select, MenuItem} from '@mui/material';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
@@ -548,8 +547,8 @@ function HomeComponent() {
               <div className='first-div button'>Сторінки</div>
               <div className='button' onClick={() =>  window.scrollTo(0, 0)}>Головна</div>
               <Link to='/about' className='button' style={{textDecoration: "none", color: "#5A5A5A"}}>Про сервіс</Link>
-              <Link to='/' className='button' style={{textDecoration: "none", color: "#5A5A5A"}}>FAQ</Link>
-              <Link to='/' className='button' style={{textDecoration: "none", color: "#5A5A5A"}}>Команда</Link>
+              <Link to='/faq' className='button' style={{textDecoration: "none", color: "#5A5A5A"}}>FAQ</Link>
+              <Link to='/team' className='button' style={{textDecoration: "none", color: "#5A5A5A"}}>Команда</Link>
             </div>
           </div>
           <div className='footer-row-card'>

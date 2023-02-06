@@ -1,4 +1,3 @@
-// import '../../App.css'
 import './cardInfoComponent.css'
 
 const CardInfoComponent = ({infoCard}) => {

@@ -1,7 +1,4 @@
-// import '../../App.css'
 import './cardAdvantageComponent.css'
-
-// import all from '../../images/all_in_one.svg'
 
 const CardAdvantageComponent = ({advantage}) => {
 
@@ -10,8 +7,6 @@ const CardAdvantageComponent = ({advantage}) => {
         business_process : require('../../images/business_process.svg').default,   
         verified_members : require('../../images/verified_members.svg').default,   
         easy_to_use : require('../../images/easy_to_use.svg').default,   
-
-
     }
 
     const img = images[advantage.imageUrl]
