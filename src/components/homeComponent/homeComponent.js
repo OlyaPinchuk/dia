@@ -551,8 +551,6 @@ function HomeComponent() {
               <Link to='/' className='button' style={{textDecoration: "none", color: "#5A5A5A"}}>FAQ</Link>
               <Link to='/' className='button' style={{textDecoration: "none", color: "#5A5A5A"}}>Команда</Link>
             </div>
-            
-
           </div>
           <div className='footer-row-card'>
             <img src={point_black} alt='point'/>
@@ -560,22 +558,19 @@ function HomeComponent() {
               <div className='first-div'>Контакти</div>
               <div>
                 <img src={pin} alt='pin'/>
-                Київ-03188</div>
-              <div>
-              <img src={mail} alt='mail'/>
-
-                moow.ltd@gmail.com</div>
-              <div>
-              <img src={telegram} alt='telegram'/>
-                
+                Київ-03188
               </div>
               <div>
-              <img src={viber} alt='viber'/>
-                
+                <img src={mail} alt='mail'/>
+                moow.ltd@gmail.com
+              </div>
+              <div>
+                <img src={telegram} alt='telegram'/>
+              </div>
+              <div>
+                <img src={viber} alt='viber'/>
               </div>
             </div>
-            
-
           </div>
           <div className='footer-row-card'>
             <img src={point_black} alt='point'/>
@@ -591,22 +586,17 @@ function HomeComponent() {
           </div>
           <div className='footer-row-card'>
             <img src={point_black} alt='point'/>
-            
             <div className='footer-card-content first-div button'>Документи</div>
           </div>
           <div className='footer-row-card-last'>
-
               <div className='footer-row-card-last-content'>Встанови безкоштовний додаток на смартфон</div>
               <div className='logos'>
-
                 <img className='button' src={google_play} alt='google_play'/>
                 <img className='button' src={apple} alt='apple_store'/>
               </div>
               <div className='footer-row-card-last-content'>Або почни працювати з браузеру</div>
               <div  className='purple-button button'> До веб-версії MOOW</div>
-           
           </div>
-
         </div>
         <div id='footer-bottom'>©ТОВ «Діджітал інвест адвайзор», 2021-2023</div>
       </div>
